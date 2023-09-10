@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Intelligent Approach for Classification of Osteoporosis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand-title"><a href="{{ url_for('index') }}">OSTEOPOROSIS</a></div>
+        <ul class="menu">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}" target = "_blank">About Us</a></li>
+          </ul>
+    </nav>
+    <center>
+        <div class= "title_"><h1>INTELLIGENT APPROACH FOR CLASSIFICATION OF-</h1> <h1 class="title_1">OSTEOPOROSIS</h1></div>
+    <div class = "elements">
+        <div class="element1">
+        <p id="desc">"Build Stronger <span class="desc_">Bones</span>,<br> Embrace Life: Empowering You to Defeat <span class="desc_">Osteoporosis</span>."</p>
+        <h2>Upload an image of a bone to classify it as normal or osteoporotic</h2>
+        <h2 id='n'><b>NOTE:</b> Only upload Knee X-Ray Images</h2>
+        <form id="uploadForm" method="POST" action="{{ url_for('index') }}" enctype="multipart/form-data">
+            <div class="form-group">
+                <br>
+                <input type="text" name="phone" id="fileinp" placeholder="Phone number" required><br>
+                <input type="file" name="file" id="fileInput" accept=".jpg, .jpeg, .png" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Classify">
+            </div>
+        </div>
+
+        <div class="element2">
+            
+        </div>
+    </div>
+
+    </form>
+    <div id="result" class="result-container">
+        <div id="loading" class="loading">Processing...</div>
+        <div id="prediction" class="prediction"></div>
+        <div id="imagePreview" class="image-preview"></div>
+    </div>
+
+</center>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <div class="footer">
+        <br>
+        
+    <div>
+</body>
+</html>
